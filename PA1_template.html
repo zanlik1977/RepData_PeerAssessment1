@@ -227,7 +227,7 @@ print(xt, type=&quot;html&quot;)
 
 <!-- html table generated in R 3.1.2 by xtable 1.7-4 package -->
 
-<!-- Tue Dec  9 17:12:39 2014 -->
+<!-- Tue Dec  9 17:31:43 2014 -->
 
 <table border=1>
 <tr> <th>  </th> <th> steps </th> <th> date </th> <th> interval </th>  </tr>
@@ -259,7 +259,7 @@ print(xt, type=&quot;html&quot;)
 
 <!-- html table generated in R 3.1.2 by xtable 1.7-4 package -->
 
-<!-- Tue Dec  9 17:12:39 2014 -->
+<!-- Tue Dec  9 17:31:43 2014 -->
 
 <table border=1>
 <tr> <th>  </th> <th> date </th> <th> steps </th>  </tr>
@@ -273,7 +273,8 @@ print(xt, type=&quot;html&quot;)
 
 <p>Plot histogram of the total number of steps taken each day.</p>
 
-<pre><code class="r">hist(total$steps,xlab=&quot;Total number of steps&quot;, ylab=&quot;Number of days&quot;, main=&quot;&quot;)
+<pre><code class="r">hist(total$steps,xlab=&quot;Total number of steps&quot;, 
+     ylab=&quot;Number of days&quot;, main=&quot;&quot;)
 title(main=&quot;Histogram of total number of steps&quot;)
 </code></pre>
 
@@ -315,7 +316,8 @@ in one 5-minute interval will be divided by the total number of days which have 
 
 <p>Next, plot the average number of steps for all days:</p>
 
-<pre><code class="r">plot(average$interval, average$steps, type=&quot;l&quot;, xlab=&quot;Time Interval&quot;, ylab=&quot;Average Number of Steps&quot;, main=&quot;&quot;)
+<pre><code class="r">plot(average$interval, average$steps, type=&quot;l&quot;, xlab=&quot;Time Interval&quot;, 
+     ylab=&quot;Average Number of Steps&quot;, main=&quot;&quot;)
 title(main=&quot;Average Number of Steps for All Days&quot;)
 </code></pre>
 
@@ -363,7 +365,10 @@ calculated &ldquo;average&rdquo; data frame. At the end, &ldquo;unsplit&rdquo; f
 return lists of data frames into the original data frame.</p>
 
 <pre><code class="r">newdata &lt;- split(data, data$date)
-newdata &lt;- lapply(newdata, function(x) {x$steps &lt;- replace(x$steps, is.na(x$steps), average[is.na(x$steps),2]); x})
+newdata &lt;- lapply(newdata, function(x) {
+  x$steps &lt;- replace(x$steps, is.na(x$steps), average[is.na(x$steps),2]); 
+  x
+  })
 newdata &lt;- unsplit(newdata,data$date)
 </code></pre>
 
@@ -376,7 +381,7 @@ print(xt, type=&quot;html&quot;)
 
 <!-- html table generated in R 3.1.2 by xtable 1.7-4 package -->
 
-<!-- Tue Dec  9 17:12:40 2014 -->
+<!-- Tue Dec  9 17:31:44 2014 -->
 
 <table border=1>
 <tr> <th>  </th> <th> steps </th> <th> date </th> <th> interval </th>  </tr>
@@ -447,7 +452,7 @@ print(xt, type=&quot;html&quot;)
 
 <!-- html table generated in R 3.1.2 by xtable 1.7-4 package -->
 
-<!-- Tue Dec  9 17:12:40 2014 -->
+<!-- Tue Dec  9 17:31:44 2014 -->
 
 <table border=1>
 <tr> <th>  </th> <th> steps </th> <th> date </th> <th> interval </th> <th> day </th>  </tr>

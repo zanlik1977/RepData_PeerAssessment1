@@ -47,7 +47,8 @@ print(xt, type="html")
 
 Plot histogram of the total number of steps taken each day.
 ```{r histogram}
-hist(total$steps,xlab="Total number of steps", ylab="Number of days", main="")
+hist(total$steps,xlab="Total number of steps", 
+     ylab="Number of days", main="")
 title(main="Histogram of total number of steps")
 ```
 
@@ -81,7 +82,8 @@ in one 5-minute interval will be divided by the total number of days which have 
 
 Next, plot the average number of steps for all days:
 ```{r plot_the_average}
-plot(average$interval, average$steps, type="l", xlab="Time Interval", ylab="Average Number of Steps", main="")
+plot(average$interval, average$steps, type="l", xlab="Time Interval", 
+     ylab="Average Number of Steps", main="")
 title(main="Average Number of Steps for All Days")
 ```
 
@@ -115,7 +117,10 @@ calculated "average" data frame. At the end, "unsplit" function is used to
 return lists of data frames into the original data frame.
 ```{r replacing_missing_values}
 newdata <- split(data, data$date)
-newdata <- lapply(newdata, function(x) {x$steps <- replace(x$steps, is.na(x$steps), average[is.na(x$steps),2]); x})
+newdata <- lapply(newdata, function(x) {
+  x$steps <- replace(x$steps, is.na(x$steps), average[is.na(x$steps),2]); 
+  x
+  })
 newdata <- unsplit(newdata,data$date)
 ```
 Here is what the new data looks like:

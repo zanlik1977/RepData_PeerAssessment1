@@ -29,7 +29,7 @@ print(xt, type="html")
 ```
 
 <!-- html table generated in R 3.1.2 by xtable 1.7-4 package -->
-<!-- Tue Dec  9 17:12:39 2014 -->
+<!-- Tue Dec  9 17:31:43 2014 -->
 <table border=1>
 <tr> <th>  </th> <th> steps </th> <th> date </th> <th> interval </th>  </tr>
   <tr> <td align="right"> 1 </td> <td align="right">  </td> <td> 2012-10-01 </td> <td align="right">   0 </td> </tr>
@@ -61,7 +61,7 @@ print(xt, type="html")
 ```
 
 <!-- html table generated in R 3.1.2 by xtable 1.7-4 package -->
-<!-- Tue Dec  9 17:12:39 2014 -->
+<!-- Tue Dec  9 17:31:43 2014 -->
 <table border=1>
 <tr> <th>  </th> <th> date </th> <th> steps </th>  </tr>
   <tr> <td align="right"> 1 </td> <td> 2012-10-02 </td> <td align="right"> 126 </td> </tr>
@@ -77,7 +77,8 @@ print(xt, type="html")
 Plot histogram of the total number of steps taken each day.
 
 ```r
-hist(total$steps,xlab="Total number of steps", ylab="Number of days", main="")
+hist(total$steps,xlab="Total number of steps", 
+     ylab="Number of days", main="")
 title(main="Histogram of total number of steps")
 ```
 
@@ -125,7 +126,8 @@ in one 5-minute interval will be divided by the total number of days which have 
 Next, plot the average number of steps for all days:
 
 ```r
-plot(average$interval, average$steps, type="l", xlab="Time Interval", ylab="Average Number of Steps", main="")
+plot(average$interval, average$steps, type="l", xlab="Time Interval", 
+     ylab="Average Number of Steps", main="")
 title(main="Average Number of Steps for All Days")
 ```
 
@@ -177,7 +179,10 @@ return lists of data frames into the original data frame.
 
 ```r
 newdata <- split(data, data$date)
-newdata <- lapply(newdata, function(x) {x$steps <- replace(x$steps, is.na(x$steps), average[is.na(x$steps),2]); x})
+newdata <- lapply(newdata, function(x) {
+  x$steps <- replace(x$steps, is.na(x$steps), average[is.na(x$steps),2]); 
+  x
+  })
 newdata <- unsplit(newdata,data$date)
 ```
 Here is what the new data looks like:
@@ -189,7 +194,7 @@ print(xt, type="html")
 ```
 
 <!-- html table generated in R 3.1.2 by xtable 1.7-4 package -->
-<!-- Tue Dec  9 17:12:40 2014 -->
+<!-- Tue Dec  9 17:31:44 2014 -->
 <table border=1>
 <tr> <th>  </th> <th> steps </th> <th> date </th> <th> interval </th>  </tr>
   <tr> <td align="right"> 1 </td> <td align="right"> 1.72 </td> <td> 2012-10-01 </td> <td align="right">   0 </td> </tr>
@@ -266,7 +271,7 @@ print(xt, type="html")
 ```
 
 <!-- html table generated in R 3.1.2 by xtable 1.7-4 package -->
-<!-- Tue Dec  9 17:12:40 2014 -->
+<!-- Tue Dec  9 17:31:44 2014 -->
 <table border=1>
 <tr> <th>  </th> <th> steps </th> <th> date </th> <th> interval </th> <th> day </th>  </tr>
   <tr> <td align="right"> 1 </td> <td align="right"> 1.72 </td> <td> 2012-10-01 </td> <td align="right">   0 </td> <td> weekday </td> </tr>
