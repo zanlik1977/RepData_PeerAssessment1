@@ -29,7 +29,7 @@ print(xt, type="html")
 ```
 
 <!-- html table generated in R 3.1.2 by xtable 1.7-4 package -->
-<!-- Tue Dec  9 17:31:43 2014 -->
+<!-- Tue Dec  9 19:20:09 2014 -->
 <table border=1>
 <tr> <th>  </th> <th> steps </th> <th> date </th> <th> interval </th>  </tr>
   <tr> <td align="right"> 1 </td> <td align="right">  </td> <td> 2012-10-01 </td> <td align="right">   0 </td> </tr>
@@ -61,7 +61,7 @@ print(xt, type="html")
 ```
 
 <!-- html table generated in R 3.1.2 by xtable 1.7-4 package -->
-<!-- Tue Dec  9 17:31:43 2014 -->
+<!-- Tue Dec  9 19:20:09 2014 -->
 <table border=1>
 <tr> <th>  </th> <th> date </th> <th> steps </th>  </tr>
   <tr> <td align="right"> 1 </td> <td> 2012-10-02 </td> <td align="right"> 126 </td> </tr>
@@ -145,16 +145,6 @@ tmax
 ```
 Maximum average number of steps is in the time interval 835 - 840.
 
-Convert minutes to hours:
-
-```r
-tmax/60.
-```
-
-```
-## [1] 13.91667
-```
-Largest daily activity is around 2 pm.
 
 ## Imputing missing values
 
@@ -194,7 +184,7 @@ print(xt, type="html")
 ```
 
 <!-- html table generated in R 3.1.2 by xtable 1.7-4 package -->
-<!-- Tue Dec  9 17:31:44 2014 -->
+<!-- Tue Dec  9 19:20:09 2014 -->
 <table border=1>
 <tr> <th>  </th> <th> steps </th> <th> date </th> <th> interval </th>  </tr>
   <tr> <td align="right"> 1 </td> <td align="right"> 1.72 </td> <td> 2012-10-01 </td> <td align="right">   0 </td> </tr>
@@ -271,7 +261,7 @@ print(xt, type="html")
 ```
 
 <!-- html table generated in R 3.1.2 by xtable 1.7-4 package -->
-<!-- Tue Dec  9 17:31:44 2014 -->
+<!-- Tue Dec  9 19:20:10 2014 -->
 <table border=1>
 <tr> <th>  </th> <th> steps </th> <th> date </th> <th> interval </th> <th> day </th>  </tr>
   <tr> <td align="right"> 1 </td> <td align="right"> 1.72 </td> <td> 2012-10-01 </td> <td align="right">   0 </td> <td> weekday </td> </tr>
@@ -316,4 +306,4 @@ xyplot(steps ~ interval | day, data=bind_average, type="l", layout =c(1,2), ylab
 
 ![plot of chunk plotting_with_lattice](figure/plotting_with_lattice-1.png) 
 
-Panels show that during the week, there is more activity in the early afternoon compared to the weekend. On the weekends, there is more activity during late afternoon compared to the weekdays. 
+ 

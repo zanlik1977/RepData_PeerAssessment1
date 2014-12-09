@@ -94,11 +94,6 @@ tmax
 ```
 Maximum average number of steps is in the time interval `r tmax` - `r tmax+5`.
 
-Convert minutes to hours:
-```{r minutes_to_hours}
-tmax/60.
-```
-Largest daily activity is around 2 pm.
 
 ## Imputing missing values
 
@@ -206,4 +201,4 @@ library(lattice)
 xyplot(steps ~ interval | day, data=bind_average, type="l", layout =c(1,2), ylab ="Number of steps")  
 ```
 
-Panels show that during the week, there is more activity in the early afternoon compared to the weekend. On the weekends, there is more activity during late afternoon compared to the weekdays. 
+ 
